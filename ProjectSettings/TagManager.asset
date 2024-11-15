@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - RabbitCircle
+  - Rat
+  - Coyote
+  - Snake
+  - Eagle
+  - Trout
+  - Bear
+  - Bee
+  - Deer
+  - Bush
+  - Arrow
   layers:
   - Default
   - TransparentFX
