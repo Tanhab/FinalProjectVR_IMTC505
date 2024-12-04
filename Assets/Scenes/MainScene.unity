@@ -5212,6 +5212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0bacd403c7f4d44b384fc5a5bc492c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  priorityAudioSource: {fileID: 1468285572}
+  loopDelay: 10
 --- !u!1 &1731932747
 GameObject:
   m_ObjectHideFlags: 0
@@ -6479,7 +6481,7 @@ MonoBehaviour:
   m_SelectMode: 0
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 1
+  m_AllowGazeInteraction: 0
   m_AllowGazeSelect: 0
   m_OverrideGazeTimeToSelect: 0
   m_GazeTimeToSelect: 0.5
