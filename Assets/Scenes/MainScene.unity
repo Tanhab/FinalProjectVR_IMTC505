@@ -5074,22 +5074,22 @@ MonoBehaviour:
   m_text: 'Habitat: Roams the open grasslands, forests, and shrublands of the Okanagan,
     often in areas rich in vegetation.
 
-    
 
-    Food: Feeds on grasses, shrubs,
-    leaves, berries, and other vegetation.
 
-    
+    Food: Feeds on grasses, shrubs, leaves,
+    berries, and other vegetation.
 
-    Ecosystem Connection:  Its
-    browsing shapes plant growth and maintains biodiversity, while predators like
-    cougars and coyotes depend on it for food.
 
-    
 
-    Mission:  Find the plants
-    it grazes on, the animals that hunt it, and how its browsing helps other plants
-    and creatures thrive in the Okanagan!
+    Ecosystem Connection:  Its browsing shapes
+    plant growth and maintains biodiversity, while predators like cougars and coyotes
+    depend on it for food.
+
+
+
+    Mission:  Find the plants it grazes on, the animals
+    that hunt it, and how its browsing helps other plants and creatures thrive in
+    the Okanagan!
 
 '
   m_isRightToLeft: 0
@@ -8568,21 +8568,20 @@ MonoBehaviour:
   m_text: 'Habitat: Roams the forests and slopes of the Okanagan, often near rivers
     and berry-rich areas.
 
-    
 
-    Food: Omnivorous diet includes berries, honey,
-    nuts, insects, roots, and fish.
 
-    
+    Food: Omnivorous diet includes berries, honey, nuts,
+    insects, roots, and fish.
 
-    Ecosystem Connection: Disperses
-    seeds, aerates soil while foraging, and recycles nutrients, supporting forest
-    growth and biodiversity.
 
-    
 
-    Mission: Can you connect the dots? What
-    plants grow from the seeds this bear spreads?
+    Ecosystem Connection: Disperses seeds, aerates
+    soil while foraging, and recycles nutrients, supporting forest growth and biodiversity.
+
+
+
+    Mission:
+    Can you connect the dots? What plants grow from the seeds this bear spreads?
 
 '
   m_isRightToLeft: 0
@@ -9185,6 +9184,78 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4531c989ecc597e46b67a5614f8850ae, type: 3}
+--- !u!1 &1483209276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1483209277}
+  - component: {fileID: 1483209278}
+  m_Layer: 0
+  m_Name: AnimalManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1483209277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483209276}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1734000675}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483209278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483209276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbefd040a1044640aedfc3bad6d99c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animals:
+  - animalName: Eagle
+    animalSprite: {fileID: 0}
+    isDiscovered: 0
+  - animalName: Rat
+    animalSprite: {fileID: 0}
+    isDiscovered: 0
+  - animalName: Coyote
+    animalSprite: {fileID: 0}
+    isDiscovered: 0
+  - animalName: Bear
+    animalSprite: {fileID: 0}
+    isDiscovered: 0
+  - animalName: Deer
+    animalSprite: {fileID: 0}
+    isDiscovered: 0
+  - animalName: Trout
+    animalSprite: {fileID: 0}
+    isDiscovered: 0
+  - animalName: Snake
+    animalSprite: {fileID: 0}
+    isDiscovered: 0
+  - animalName: Bush
+    animalSprite: {fileID: 0}
+    isDiscovered: 0
+  - animalName: HoneyBee
+    animalSprite: {fileID: 0}
+    isDiscovered: 0
 --- !u!1001 &1489760597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11629,6 +11700,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732264425}
   m_CullTransparentMesh: 1
+--- !u!1 &1734000674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734000675}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1734000675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734000674}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1483209277}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1734843132
 GameObject:
   m_ObjectHideFlags: 0
@@ -12120,21 +12223,21 @@ MonoBehaviour:
   m_text: 'Habitat: Lives in grasslands, brushy areas, and edges of wetlands in North
     America.
 
-    
+
 
     Food: Consumes seeds, grasses, grains, and insects.
 
-    
+
 
     Ecosystem
     Connection: Spreads seeds to promote plant growth and regulates pest populations.
     Provides food for predators like snakes, owls, and coyotes
 
-    
 
-    Mission
-    (Call to Action): Can you track the journey of the seeds this tiny mouse spreads?
-    and which predators wait for the mouse to scurry by?
+
+    Mission (Call
+    to Action): Can you track the journey of the seeds this tiny mouse spreads? and
+    which predators wait for the mouse to scurry by?
 
 '
   m_isRightToLeft: 0
@@ -13846,6 +13949,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1483209278}
+        m_TargetAssemblyTypeName: AnimalManager, Assembly-CSharp
+        m_MethodName: UpdateDiscoveredAnimal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Eagle
           m_BoolArgument: 1
         m_CallState: 2
   m_HoverExited:
@@ -20367,3 +20482,4 @@ SceneRoots:
   - {fileID: 1731932748}
   - {fileID: 1538244531}
   - {fileID: 1655125243}
+  - {fileID: 1734000675}
