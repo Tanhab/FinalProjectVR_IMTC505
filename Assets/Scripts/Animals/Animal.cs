@@ -6,6 +6,5 @@ using UnityEngine;
 public class Animal 
 {
    public string animalName;
-   public Sprite animalSprite;
    public bool isDiscovered;
 }

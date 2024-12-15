@@ -7,6 +7,7 @@ public class AnimalManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public List<Animal> animals = new List<Animal>();
+    [SerializeField] private GraphManager graphManager;
 
 
     public Animal GetAnimalByName(string name)
@@ -23,6 +24,7 @@ public class AnimalManager : MonoBehaviour
 
     public void UpdateDiscoveredAnimal(string name)
     {
+        Debug.Log($"Animal discovered called for {name}");
         // Attempt to find the animal by name in the list
         Animal animal = animals.Find(a => a.animalName.Equals(name, StringComparison.OrdinalIgnoreCase));
 
@@ -31,6 +33,7 @@ public class AnimalManager : MonoBehaviour
             // Update the isDiscovered status
             animal.isDiscovered = true;
             Debug.Log($"Animal {name} marked as discovered.");
+            graphManager.UpdateGraphButtonText(name);
         }
         else
         {
