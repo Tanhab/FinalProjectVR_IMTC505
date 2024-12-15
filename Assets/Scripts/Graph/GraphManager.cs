@@ -7,9 +7,17 @@ using UnityEngine.UI;
 public class GraphManager : MonoBehaviour
 {
     [SerializeField] private AnimalManager animalManager; // Reference to the AnimalManager script
-    [SerializeField] private List<Button> animalButtons;  // List of buttons representing animals on the graph
     [SerializeField] private TMP_Text feedbackText;       // Feedback text to display messages
+    [SerializeField] private List<Button> animalButtons;  // List of buttons representing animals on the graph
+    [SerializeField] private List<GameObject> foodChainLines;
+    [SerializeField] private Slider progressSlider;       // Reference to the Slider UI component
+    [SerializeField] private TMP_Text sliderText;         // Reference to the TMP_Text displaying progress
+    private int foodChainCompletedCount = 0;              // Counter for successful food chains
+    private int totalFoodChains = 14;                     // Total number of food chains
 
+    
+    
+    private Dictionary<string, GameObject> arrowMap = new Dictionary<string, GameObject>();
     private Dictionary<string, Button> animalButtonMap = new Dictionary<string, Button>();
     Dictionary<string, List<string>> foodChain = new Dictionary<string, List<string>>()
     {
@@ -31,6 +39,14 @@ public class GraphManager : MonoBehaviour
 
     private void Start()
     {
+        foreach (GameObject line in foodChainLines)
+        {
+            string arrowName = line.name.ToLower(); // Use the name (e.g., "coyote_deer")
+            arrowMap[arrowName] = line;
+
+            // Ensure all lines are initially inactive
+            line.SetActive(false);
+        }
         // Initialize the button map based on GameObject names
         foreach (Button button in animalButtons)
         {
@@ -136,23 +152,42 @@ public class GraphManager : MonoBehaviour
         string predatorName = selectedPredator.gameObject.name.ToLower();
         string preyName = preyButton.gameObject.name.ToLower();
 
-        
-
         if (foodChain.ContainsKey(predatorName) && foodChain[predatorName].Contains(preyName))
         {
             feedbackText.text = $"Success! {predatorName} depends on {preyName} in the food chain.";
-            // Optionally mark connection visually here
+
+            // Activate the corresponding arrow (predator_prey)
+            string arrowKey = $"{predatorName}_{preyName}";
+            if (arrowMap.ContainsKey(arrowKey) && !arrowMap[arrowKey].activeSelf)
+            {
+                arrowMap[arrowKey].SetActive(true);
+                Debug.Log($"Activated arrow: {arrowKey}");
+
+                // Update progress only if this connection was not already counted
+                foodChainCompletedCount++;
+                UpdateProgress();
+            }
+
+            // Reset selections
             DeselectButton(selectedPredator);
             selectedPredator = null;
-            
         }
         else
         {
             feedbackText.text = $"Invalid food chain! {predatorName} does not depend on {preyName}.";
-            // Reset both buttons
+
+            // Reset buttons
             DeselectButton(selectedPredator);
             DeselectButton(preyButton);
             selectedPredator = null;
         }
     }
+
+    private void UpdateProgress()
+    {
+        // Update slider value and text
+        progressSlider.value = foodChainCompletedCount;
+        sliderText.text = $"Food Chain completed - {foodChainCompletedCount}/{totalFoodChains}";
+    }
+
 }
