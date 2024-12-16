@@ -12,9 +12,12 @@ public class GraphManager : MonoBehaviour
     [SerializeField] private List<GameObject> foodChainLines;
     [SerializeField] private Slider progressSlider;       // Reference to the Slider UI component
     [SerializeField] private TMP_Text sliderText;         // Reference to the TMP_Text displaying progress
+    [SerializeField] private GameObject foodChainFeedbackCanvas;
+    [SerializeField] private TMP_Text feedbackFoodChainText;
+    [SerializeField] private Button feedbackCanvasCloseButton;
+    [SerializeField] private GameObject borderBlockCanvas; 
     private int foodChainCompletedCount = 0;              // Counter for successful food chains
     private int totalFoodChains = 14;                     // Total number of food chains
-
     
     
     private Dictionary<string, GameObject> arrowMap = new Dictionary<string, GameObject>();
@@ -32,6 +35,66 @@ public class GraphManager : MonoBehaviour
         { "bee", new List<string>{"bush"}},
         
     };
+
+    private Dictionary<string, string> remarksText = new Dictionary<string, string>()
+    {
+        {
+            "eagle_snake",
+            "The bald eagle, with its sharp talons and keen eyesight, occasionally preys on rattlesnakes. By controlling snake populations, the eagle ensures that the balance in the food web is maintained, while the rattlesnake offers the eagle a unique meal that provides important nutrients. "
+        },
+        {
+            "eagle_mouse",
+            "The rattlesnake, a stealthy predator, is highly skilled at ambushing small prey like mice. Using its venomous bite to immobilize its target, the snake helps regulate rodent populations, which in turn protects plant life from overgrazing. "
+        },
+        {
+            "eagle_trout",
+            "The bald eagle relies on the river’s fish, particularly trout, as a primary food source. With its sharp vision, the eagle spots its prey from high above, swooping down to catch fish, which is a critical part of the eagle's diet and its role in regulating fish populations in the ecosystem. "
+        },
+        {
+            "snake_rat",
+            "The rattlesnake, a stealthy predator, is highly skilled at ambushing small prey like mice. Using its venomous bite to immobilize its target, the snake helps regulate rodent populations, which in turn protects plant life from overgrazing. "
+        },
+        {
+            "bear_trout",
+            "The black bear, a skilled fisher, wades into rivers and streams to catch trout. This seasonal feast provides the bear with essential protein and fat, while the bear's leftovers enrich the forest floor, nourishing plants and insects. "
+        },
+        {
+            "bear_bee",
+            "Drawn to the sweet rewards of a wild honeybee's hive, the black bear is an occasional raider. By breaking open hives, the bear spreads honey and wax, which can benefit other creatures, though it disrupts the bee colony's hard work. "
+        },
+        {
+            "bear_bush",
+            "The black bear has a sweet tooth for lowbush blueberries, which ripen during the summer and fall. These berries provide a crucial source of energy and nutrients, especially as the bear prepares for hibernation. By consuming large quantities of blueberries, the bear also aids in seed dispersal, as seeds pass through its digestive system and are deposited across the forest floor, helping new bushes grow and sustain the ecosystem. "
+        },
+        {
+            "bear_rat",
+            "The opportunistic black bear may occasionally encounter the western harvest mouse while foraging. Though not a primary food source, the mouse provides a small but valuable protein boost, especially during times when other food sources are scarce. The bear’s digging and foraging activities, in turn, disturb the soil, creating opportunities for seed dispersal and plant growth, which benefit the harvest mouse’s habitat. "
+        },
+        {
+            "coyote_deer",
+            "The coyote, a cunning predator, often preys on young or weakened deer. By targeting these individuals, the coyote plays a critical role in maintaining a healthy deer population and preventing overgrazing of vegetation. "
+        },
+        {
+            "coyote_rat",
+            "The coyote often hunts mice, which are an easy and plentiful food source. This predation helps keep rodent populations in check, reducing competition for seeds and grasses among other animals "
+        },
+        {
+            "coyote_snake",
+            "Though uncommon, the coyote occasionally preys on rattlesnakes, particularly if the snake is small or injured. This opportunistic behavior shows the coyote's adaptability and its role as a regulator in the ecosystem."
+        },
+        {
+            "bee_bush",
+            "The wild honeybee dances among the blossoms of a bush, collecting nectar and pollen. In doing so, the bee pollinates the bush's flowers, enabling the production of seeds or fruits, which sustain other creatures in the ecosystem."
+        },
+        {
+            "rat_bush",
+            "The mouse is both a helper and a consumer of the blueberry bush. It eats the berries for nourishment, scattering seeds in its droppings, which helps propagate new bushes across the forest. "
+        },
+        {
+            "deer_bush",
+            "The deer feed on the foliage and fruits of the blueberry bush, helping to disperse the seeds through their droppings. This benefits the blueberry bush by promoting its spread across the forest floor."
+        }
+    }; 
 
     private Button selectedPredator = null;  // Currently selected predator button
     private Color selectedColor = new Color(131f / 255f, 254f / 255f, 94f / 255f, 1f); // Predator highlight color
@@ -57,6 +120,8 @@ public class GraphManager : MonoBehaviour
             // Add click listeners to the buttons
             button.onClick.AddListener(() => OnAnimalButtonClick(button));
         }
+
+        feedbackCanvasCloseButton.onClick.AddListener(CloseFoodChainRemarks);
         ShowDefaultText();
     }
     
@@ -167,6 +232,8 @@ public class GraphManager : MonoBehaviour
                 foodChainCompletedCount++;
                 UpdateProgress();
             }
+            
+            OpenFoodChainRemarks(arrowKey);
 
             // Reset selections
             DeselectButton(selectedPredator);
@@ -188,6 +255,24 @@ public class GraphManager : MonoBehaviour
         // Update slider value and text
         progressSlider.value = foodChainCompletedCount;
         sliderText.text = $"Food Chain completed - {foodChainCompletedCount}/{totalFoodChains}";
+    }
+
+    private void OpenFoodChainRemarks(string pred_prey )
+    {
+        if (remarksText.ContainsKey(pred_prey))
+        {
+            borderBlockCanvas.gameObject.SetActive(true);
+            foodChainFeedbackCanvas.gameObject.SetActive(true);
+            feedbackFoodChainText.text = remarksText[pred_prey];
+        }
+    }
+
+    private void CloseFoodChainRemarks()
+    {
+        borderBlockCanvas.gameObject.SetActive(false);
+        foodChainFeedbackCanvas.gameObject.SetActive(false);
+        feedbackFoodChainText.text = "";
+        ShowDefaultText();
     }
 
 }
