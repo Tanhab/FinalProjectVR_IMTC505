@@ -11015,6 +11015,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 653863611}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 40312742209021849be43ac02cbecced, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2142695929}
     - targetCorrespondingSourceObject: {fileID: -3367849755854097146, guid: 40312742209021849be43ac02cbecced, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1338100448}
@@ -18922,6 +18925,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133457449}
   m_CullTransparentMesh: 1
+--- !u!1 &2142695928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 40312742209021849be43ac02cbecced, type: 3}
+  m_PrefabInstance: {fileID: 1338100444}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2142695929
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142695928}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 828f514b41493ee42a97503ed1f60241, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2146768398
 GameObject:
   m_ObjectHideFlags: 0
@@ -19757,6 +19786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652576642568}
+  - component: {fileID: 919132148038413491}
   m_Layer: 0
   m_Name: Deer
   m_TagString: Untagged
@@ -19764,6 +19794,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &919132148038413491
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148038413490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c1fd583d9844c846bff1fd0993a2e34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &919132148185697749
 GameObject:
   m_ObjectHideFlags: 0
@@ -19811,6 +19862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653162379912}
+  - component: {fileID: 919132148617887795}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Untagged
@@ -19818,6 +19870,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &919132148617887795
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148617887794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 594f989e29dc73347a255a6e6abd0b44, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &919132148755639850
 GameObject:
   m_ObjectHideFlags: 0
@@ -21490,6 +21563,7 @@ GameObject:
   - component: {fileID: 7146482642550075081}
   - component: {fileID: 1165332966}
   - component: {fileID: 1165332967}
+  - component: {fileID: 7146482642550075082}
   m_Layer: 0
   m_Name: Deer
   m_TagString: Untagged
@@ -24653,6 +24727,27 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.000000009313226, y: 0.014006989, z: 0.003658548}
     m_Extent: {x: 0.008420272, y: 0.02245135, z: 0.02446342}
   m_DirtyAABB: 0
+--- !u!95 &7146482642550075082
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034794341302775594}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c1fd583d9844c846bff1fd0993a2e34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &7149294955898628210
 Transform:
   m_ObjectHideFlags: 0
