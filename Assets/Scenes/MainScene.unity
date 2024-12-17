@@ -2216,7 +2216,7 @@ MonoBehaviour:
 
 
     4.
-    Complete all food chains to reestablish the ecosystem and complete your duty.
+    Complete all food chains to re-establish the ecosystem and complete your duty.
 
 '
   m_isRightToLeft: 0
@@ -13678,7 +13678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1582046283
 RectTransform:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GraphManager : MonoBehaviour
@@ -255,6 +256,18 @@ public class GraphManager : MonoBehaviour
         // Update slider value and text
         progressSlider.value = foodChainCompletedCount;
         sliderText.text = $"Food Chain completed - {foodChainCompletedCount}/{totalFoodChains}";
+
+        // Check if all food chains are completed
+        if (foodChainCompletedCount >= totalFoodChains)
+        {
+            feedbackText.text = "All food chains are restored! Loading the final scene...";
+            LoadEndScene();
+        }
+    }
+
+    private void LoadEndScene()
+    {
+        SceneManager.LoadScene("EndScene"); // Replace "EndScene" with your actual end scene name
     }
 
     private void OpenFoodChainRemarks(string pred_prey )
